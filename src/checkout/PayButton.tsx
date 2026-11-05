@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { getSession } from "../session";
 import { charge } from "./api";
-import { formatUsd } from "../lib/money";
+import { formatMoney, type Currency } from "../lib/money";
 
 interface PayButtonProps {
   amount: number;
+  currency: Currency;
 }
 
-export function PayButton({ amount }: PayButtonProps) {
+export function PayButton({ amount, currency }: PayButtonProps) {
   const [paid, setPaid] = useState(false);
 
   async function handlePay() {
@@ -20,7 +21,7 @@ export function PayButton({ amount }: PayButtonProps) {
 
   return (
     <button type="button" className="pay" onClick={handlePay}>
-      {paid ? "Paid" : `Pay ${formatUsd(amount)}`}
+      {paid ? "Paid" : `Pay ${formatMoney(amount, currency)}`}
     </button>
   );
 }

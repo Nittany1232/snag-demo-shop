@@ -82,3 +82,42 @@ body {
 .toggle.armed { color: var(--accent); font-weight: 600; cursor: default; }
 
 .hint { font-size: 13px; color: var(--muted); }
+
+.toggle select,
+.field select,
+.promo input {
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+.toggle select { margin-left: auto; }
+.hintline { margin: 0; font-size: 13px; color: var(--accent); }
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.promo { display: flex; flex-direction: column; gap: 6px; }
+.promo-row { display: flex; gap: 8px; }
+.promo input { flex: 1; min-width: 0; }
+.secondary {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.status { margin: 0; font-size: 13px; color: var(--muted); }
